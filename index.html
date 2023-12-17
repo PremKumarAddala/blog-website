@@ -1,33 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="task2.css">
-    <title>Your Blog</title>
-</head>
-<body>
-    <header>
-        <h1>My Blog</h1>
-        <p>Welcome Everyone</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#" onclick="loadPage('home')">Home</a></li>
-            <li><a href="#" onclick="loadPage('about')">About</a></li>
-            <li><a href="#" onclick="loadPage('contact')">Contact</a></li>
-        </ul>
-    </nav>
-    <main id="content">
-        <section class="post">
-            <h2>Default Content</h2>
-            <p>This is the default content of ny blog post.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Your Blog. All rights arec reserved.</p>
-    </footer>
-    <script src="task2.js"></script>
-</body>
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta name="viewport"
+		content="user-scalable=no, initial-scale=1, 
+				maximum-scale=1, minimum-scale=1, 
+				width=device-width"> 
+	<!-- CSS file linked -->
+	<link rel="stylesheet" href="task2.css"> 
+	<title>Blog Website</title> 
+</head> 
+
+<body> 
+	<header> 
+		<h1 class="logo"><a href="#">Your Blog</a></h1> 
+		<nav> 
+			<ul> 
+				<li class="nav1"><a href="/">Home</a></li> 
+				<li class="nav1"> 
+					<a href="#" id="createPostBtn"> 
+						Create Post 
+					</a> 
+				</li> 
+				<li class="nav1"><a href="#">Contact</a></li> 
+			</ul> 
+		</nav> 
+	</header> 
+
+	<main class="post-container"> 
+		<div id="createPostModal" class="modal"> 
+			<div class="modal-content"> 
+				<span class="close" id="closeModal">×</span> 
+				<h2>Create a New Post</h2> 
+				<form id="postForm"> 
+					<div class="upper"> 
+						<div class="title"> 
+							<label class="postheading" for="postTitle"> 
+								Title 
+							</label> 
+							<input type="text" class="postTitle"
+							id="postTitle" name="postTitle"
+							autocomplete="off" required> 
+						</div> 
+						<div class="category1"> 
+							<label class="postheading" for="postCategory"> 
+								Category 
+							</label> 
+							<input type="text" class="postCategory"
+							id="postCategory" name="postCategory"
+							autocomplete="off" required> 
+						</div> 
+					</div> 
+
+					<label class="postheading" for="postDescription"> 
+						Description 
+					</label> 
+					<textarea class="postDescription" id="postDescription"
+							name="postDescription" autocomplete="off"
+							required> 
+					</textarea> 
+
+					<button type="submit" id="postSubmitBtn"
+					class="postSubmitBtn">Post</button> 
+				</form> 
+			</div> 
+		</div> 
+
+		<!-- Detail Modal -->
+		<div id="postDetailModal" class="modal"> 
+			<div class="modal-content"> 
+				<span class="close" id="closeDetailModal"> 
+					× 
+				</span> 
+				<h1 id="detailTitle"></h1> 
+				<span id="detailDate"></span> 
+				<p id="detailDescription"></p> 
+			</div> 
+		</div> 
+
+		<div id="postCreatedMessage" class="post-message"> 
+			Post created successfully! 
+		</div> 
+
+	</main>  
+
+	<!-- JavaScript file linked -->
+	<script src="task2.js"></script> 
+</body> 
 
 </html>
